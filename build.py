@@ -41,7 +41,7 @@ if __name__ == '__main__':
         f.write('\n\n')
         f.write('# MISSIONG PERSON')
         f.write('\n\n')
-        f.write('<p align="center"><img src="./missing_person.jpg"></p>')
+        f.write('<img src="./missing_person.jpg">')
         f.write('\n\n')
         f.write('# INFO')
         f.write('\n\n')
