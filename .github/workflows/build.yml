@@ -1,0 +1,30 @@
+name: Build README
+
+on:
+push:
+    branches: master
+  schedule:
+    - cron: "0 0 * * *" # daily
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Update
+        env:
+          API_ID: ${{ secrets.API_ID }}
+          API_TOKEN: ${{ secrets.API_TOKEN }}
+        run: |-
+          python build.py
+      - name: Commit and push
+        run: |-
+          git config --global user.email "ojayyezzir@gmail.com"
+          git config --global user.name "ojayyezzir"
+          git commit -am "🚀 Update missing person" || exit 0
+          git push
