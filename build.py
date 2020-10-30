@@ -43,7 +43,7 @@ def generate_readme(data):
             [
                 BADGE,
                 '\n\n',
-                '# MISSIONG PERSON',
+                '# MISSING PERSON',
                 '\n\n',
                 '<img src="./missing_person.jpg">',
                 '\n\n',
