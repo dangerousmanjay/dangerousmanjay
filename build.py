@@ -38,7 +38,7 @@ def generate_image(data):
 
 
 def generate_readme(data):
-    with open('README.md', 'w') as f:
+    with open('README.md', 'w', -1, 'utf-8') as f:
         f.writelines(
             [
                 BADGE,
