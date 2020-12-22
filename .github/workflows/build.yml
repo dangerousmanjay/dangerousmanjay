@@ -27,7 +27,7 @@ jobs:
           python build.py
       - name: Commit and push
         run: |-
-          git config --global user.email "ojayyezzir@gmail.com"
-          git config --global user.name "ojayyezzir"
+          git config --global user.email "missing-person-bot@example.com"
+          git config --global user.name "missing-person-bot"
           git commit -am "🚀 Update missing person" || exit 0
           git push
