@@ -22,7 +22,7 @@ def fetch_random_data():
         BASE_URL + f'&rowSize=1&page={r}'
     )
     data = response.json()['list'][0]
-    print(f"Found: {data["nm"]}")
+    print(f"Found: {data['nm']}")
     return data
 
 
