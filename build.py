@@ -10,16 +10,20 @@ BADGE = '[![182](https://img.shields.io/badge/%EC%8B%A4%EC%A2%85%EC%8B%A0%EA%B3%
 
 def fetch_total():
     response = requests.post(BASE_URL + '&rowSize=1')
-
-    return response.json()['totalCount']
+    count = response.json()['totalCount']
+    print(f"Total: {count}")
+    return count
 
 
 def fetch_random_data():
+    r = random.randint(1, fetch_total())
+    print(f"Target: {r}")
     response = requests.post(
-        BASE_URL + f'&rowSize=1&page={random.randint(1, fetch_total())}'
+        BASE_URL + f'&rowSize=1&page={r}'
     )
-
-    return response.json()['list'][0]
+    data = response.json()['list'][0]
+    print(f"Found: {data["nm"]}")
+    return data
 
 
 def process_data(data):
