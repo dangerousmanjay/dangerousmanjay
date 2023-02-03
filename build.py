@@ -66,6 +66,8 @@ def generate_readme(data):
 
 
 def build():
+    headers = requests.utils.default_headers()
+    headers.update({"User-Agent": "Mozilla/5.0"})
     while True:
         data = process_data(fetch_random_data())
         if data['tknphotoFile'] is not None:
